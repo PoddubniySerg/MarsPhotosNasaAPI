@@ -1,4 +1,4 @@
-package go.skillbox.domain.models.entity
+package go.skillbox.domain.models.entities
 
 data class Rover(
     val id: Int,

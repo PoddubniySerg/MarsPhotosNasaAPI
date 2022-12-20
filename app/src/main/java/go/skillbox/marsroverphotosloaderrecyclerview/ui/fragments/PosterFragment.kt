@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
-import go.skillbox.domain.models.entity.MarsPhoto
+import go.skillbox.domain.models.entities.MarsPhoto
 import go.skillbox.marsroverphotosloaderrecyclerview.R
 import go.skillbox.marsroverphotosloaderrecyclerview.databinding.FragmentPosterBinding
 import go.skillbox.marsroverphotosloaderrecyclerview.models.MarsPhotoUiModel
@@ -31,7 +31,7 @@ class PosterFragment(item: MarsPhoto?) : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentPosterBinding.inflate(inflater, container, false)
         if (savedInstanceState != null) photo =
             savedInstanceState.getSerializable(ITEM_ARG_KEY) as MarsPhotoUiModel

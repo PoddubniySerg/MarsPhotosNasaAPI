@@ -1,4 +1,4 @@
-package go.skillbox.marsroverphotosloaderrecyclerview.ui.main
+package go.skillbox.marsroverphotosloaderrecyclerview.ui.recyclerviews.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

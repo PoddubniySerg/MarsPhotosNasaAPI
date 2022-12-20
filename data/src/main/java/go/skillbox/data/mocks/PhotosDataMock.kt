@@ -12,7 +12,7 @@ class PhotosDataMock {
         return PhotosDto(getPhotos())
     }
 
-    suspend fun getPhotos(): List<PhotoDto> {
+    private suspend fun getPhotos(): List<PhotoDto> {
         delay(2000)
         return listOf(
             PhotoDto(

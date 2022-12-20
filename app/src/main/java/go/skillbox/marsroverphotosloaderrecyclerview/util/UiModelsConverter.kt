@@ -1,8 +1,8 @@
 package go.skillbox.marsroverphotosloaderrecyclerview.util
 
-import go.skillbox.domain.models.entity.Camera
-import go.skillbox.domain.models.entity.MarsPhoto
-import go.skillbox.domain.models.entity.Rover
+import go.skillbox.domain.models.entities.Camera
+import go.skillbox.domain.models.entities.MarsPhoto
+import go.skillbox.domain.models.entities.Rover
 import go.skillbox.marsroverphotosloaderrecyclerview.models.CameraUiModel
 import go.skillbox.marsroverphotosloaderrecyclerview.models.MarsPhotoUiModel
 import go.skillbox.marsroverphotosloaderrecyclerview.models.RoverUiModel
@@ -20,7 +20,7 @@ class UiModelsConverter {
         )
     }
 
-    fun convert(camera: Camera): CameraUiModel {
+    private fun convert(camera: Camera): CameraUiModel {
         return CameraUiModel(
             camera.id,
             camera.name,
@@ -29,7 +29,7 @@ class UiModelsConverter {
         )
     }
 
-    fun convert(rover: Rover): RoverUiModel {
+    private fun convert(rover: Rover): RoverUiModel {
         return RoverUiModel(
             rover.id,
             rover.name,

@@ -10,12 +10,11 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.paging.LoadState
 import dagger.hilt.android.AndroidEntryPoint
-import go.skillbox.domain.models.entity.MarsPhoto
 import go.skillbox.marsroverphotosloaderrecyclerview.R
 import go.skillbox.marsroverphotosloaderrecyclerview.databinding.FragmentMainBinding
 import go.skillbox.marsroverphotosloaderrecyclerview.ui.activities.MainActivity
-import go.skillbox.marsroverphotosloaderrecyclerview.ui.main.LoadStateAdapterMarsPhoto
-import go.skillbox.marsroverphotosloaderrecyclerview.ui.main.MarsPhotosRecyclerViewAdapter
+import go.skillbox.marsroverphotosloaderrecyclerview.ui.recyclerviews.adapters.LoadStateAdapterMarsPhoto
+import go.skillbox.marsroverphotosloaderrecyclerview.ui.recyclerviews.adapters.MarsPhotosRecyclerViewAdapter
 import go.skillbox.marsroverphotosloaderrecyclerview.ui.viewmodels.MainViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
@@ -31,7 +30,7 @@ class MainFragment : Fragment() {
     private var binding: FragmentMainBinding? = null
     private val viewModel by viewModels<MainViewModel>()
 
-    private val adapter = MarsPhotosRecyclerViewAdapter { item -> onItemClick(item) }
+    private val adapter = MarsPhotosRecyclerViewAdapter { item -> viewModel.onItemClick(item) }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -71,17 +70,17 @@ class MainFragment : Fragment() {
                 }
             }
         }.launchIn(viewLifecycleOwner.lifecycleScope)
+
+        viewModel.marsPhotoFlow.onEach {
+            parentFragmentManager.beginTransaction()
+                .addToBackStack(this.toString())
+                .replace(R.id.container, PosterFragment.newInstance(it))
+                .commit()
+        }.launchIn(viewLifecycleOwner.lifecycleScope)
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         binding = null
-    }
-
-    private fun onItemClick(item: MarsPhoto) {
-        parentFragmentManager.beginTransaction()
-            .addToBackStack(this.toString())
-            .replace(R.id.container, PosterFragment.newInstance(item))
-            .commit()
     }
 }

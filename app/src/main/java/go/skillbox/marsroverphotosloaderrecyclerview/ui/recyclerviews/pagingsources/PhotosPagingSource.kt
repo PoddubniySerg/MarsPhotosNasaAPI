@@ -2,7 +2,7 @@ package go.skillbox.marsroverphotosloaderrecyclerview.ui.recyclerviews.pagingsou
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import go.skillbox.domain.models.entity.MarsPhoto
+import go.skillbox.domain.models.entities.MarsPhoto
 import go.skillbox.domain.models.params.GetPhotosByPageParam
 
 class PhotosPagingSource constructor(

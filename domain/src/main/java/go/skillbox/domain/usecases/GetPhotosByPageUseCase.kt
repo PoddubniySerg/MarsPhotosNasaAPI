@@ -1,7 +1,7 @@
 package go.skillbox.domain.usecases
 
 import go.skillbox.domain.exceptions.NetworkDownloadException
-import go.skillbox.domain.models.entity.MarsPhoto
+import go.skillbox.domain.models.entities.MarsPhoto
 import go.skillbox.domain.models.params.GetPhotosByPageParam
 import go.skillbox.domain.repository.MarsPhotosRepository
 import javax.inject.Inject

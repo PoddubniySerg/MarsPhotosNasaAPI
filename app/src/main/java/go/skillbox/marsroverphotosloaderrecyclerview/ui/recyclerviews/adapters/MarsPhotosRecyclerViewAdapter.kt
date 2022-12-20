@@ -1,4 +1,4 @@
-package go.skillbox.marsroverphotosloaderrecyclerview.ui.main
+package go.skillbox.marsroverphotosloaderrecyclerview.ui.recyclerviews.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,7 +6,7 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import go.skillbox.domain.models.entity.MarsPhoto
+import go.skillbox.domain.models.entities.MarsPhoto
 import go.skillbox.marsroverphotosloaderrecyclerview.R
 import go.skillbox.marsroverphotosloaderrecyclerview.databinding.ItemPhotoBinding
 

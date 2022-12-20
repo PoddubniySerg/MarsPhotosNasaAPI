@@ -3,7 +3,7 @@ package go.skillbox.data
 import go.skillbox.data.mocks.PhotosDataMock
 import go.skillbox.data.retrofit.MarsPhotosDataSource
 import go.skillbox.data.util.DtoConverter
-import go.skillbox.domain.models.entity.MarsPhotosList
+import go.skillbox.domain.models.entities.MarsPhotosList
 import go.skillbox.domain.models.params.GetPhotosByPageParam
 import go.skillbox.domain.repository.MarsPhotosRepository
 import kotlinx.coroutines.delay

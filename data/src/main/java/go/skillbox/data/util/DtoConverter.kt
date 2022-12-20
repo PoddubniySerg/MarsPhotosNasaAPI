@@ -4,10 +4,10 @@ import go.skillbox.data.retrofit.dto.CameraDto
 import go.skillbox.data.retrofit.dto.PhotoDto
 import go.skillbox.data.retrofit.dto.PhotosDto
 import go.skillbox.data.retrofit.dto.RoverDto
-import go.skillbox.domain.models.entity.Camera
-import go.skillbox.domain.models.entity.MarsPhoto
-import go.skillbox.domain.models.entity.MarsPhotosList
-import go.skillbox.domain.models.entity.Rover
+import go.skillbox.domain.models.entities.Camera
+import go.skillbox.domain.models.entities.MarsPhoto
+import go.skillbox.domain.models.entities.MarsPhotosList
+import go.skillbox.domain.models.entities.Rover
 
 class DtoConverter {
 
@@ -16,7 +16,7 @@ class DtoConverter {
         return MarsPhotosList(photosDto.photos.map { convert(it) })
     }
 
-    fun convert(photoDto: PhotoDto): MarsPhoto {
+    private fun convert(photoDto: PhotoDto): MarsPhoto {
         return MarsPhoto(
             photoDto.id,
             photoDto.sol,
@@ -27,7 +27,7 @@ class DtoConverter {
         )
     }
 
-    fun convert(cameraDto: CameraDto): Camera {
+    private fun convert(cameraDto: CameraDto): Camera {
         return Camera(
             cameraDto.id,
             cameraDto.name,
@@ -36,7 +36,7 @@ class DtoConverter {
         )
     }
 
-    fun convert(roverDto: RoverDto): Rover {
+    private fun convert(roverDto: RoverDto): Rover {
         return Rover(
             roverDto.id,
             roverDto.name,
