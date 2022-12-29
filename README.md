@@ -29,3 +29,7 @@ Nasa API находится по адресу https://api.nasa.gov и имеет
 
 * https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=YOUR_API_KEY — загрузка всех фотографий, сделанных ровером Curiosity за 1000 сол.
 * https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2022-1-1&api_key=YOUR_API_KEY — загрузка фотографий, сделанных ровером Curiosity 1 января 2022 года.
+
+# Результат
+
+Функциональность реализован с применением Kotlin, Android SDK, MVVM, Clean Architecture, Retrofit, Hilt(Dagger), Paging library, Glide.
